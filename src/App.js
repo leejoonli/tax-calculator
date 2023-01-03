@@ -4,22 +4,18 @@ import Input from './components/Input.js';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [text, setText] = useState([]);
-  const [length, setLength] = useState(text.length);
+  const [taxOwed, setTaxOwed] = useState(null);
 
-  useEffect(()=>{},[length]);
+  useEffect(()=>{},[taxOwed]);
 
   return (
     <div className="App">
-      <Input text={text} setText={setText} setLength={setLength} />
-      <div>
-        {text.map((element, index) => {
-          return (
-            <h1 key={`${element}-${index}`}>{element}</h1>
-          );
-        })}
-        {text}
-      </div>
+      <Input taxOwed={taxOwed} setTaxOwed={setTaxOwed} />
+      {taxOwed ?
+        <h1>You owe ${taxOwed} in taxes for the 2022 year</h1>
+        :
+        <h1>Input income for year 2022</h1>
+      }
     </div>
   );
 }
