@@ -11,6 +11,7 @@ const Input = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.text.push(input);
+        props.setLength(props.text.length);
         setInput('');
     }
 
