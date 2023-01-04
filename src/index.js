@@ -3,23 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import ErrorPage from './routes/error-page';
 import Contact from './routes/contact';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/contacts",
-        element: <Contact />,
-    },
-]);
+const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path='/' element={<App />}>
+            <Route index element={<App />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/error' element={<ErrorPage />} />
+        </Route>
+    )
+);
 
 root.render(
     <React.StrictMode>
