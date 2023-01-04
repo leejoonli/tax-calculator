@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import ErrorPage from './routes/error-page';
 import Contact from './routes/contact';
-import Input from './components/Input';
 import RootLayout from './pages/RootLayout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

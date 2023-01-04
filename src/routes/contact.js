@@ -1,7 +1,7 @@
 function Contact() {
     return (
         <div id="contact">
-            ginga so hot
+            contact
         </div>
     );
 }
