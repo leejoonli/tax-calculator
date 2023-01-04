@@ -7,13 +7,14 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import ErrorPage from './routes/error-page';
 import Contact from './routes/contact';
 import Input from './components/Input';
+import RootLayout from './pages/RootLayout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path='/' element={<App />}>
-            <Route index element={<Input />} />
+        <Route path='/' element={<RootLayout />}>
+            <Route index element={<App />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/error' element={<ErrorPage />} />
         </Route>
