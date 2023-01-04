@@ -6,13 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom';
 import ErrorPage from './routes/error-page';
 import Contact from './routes/contact';
+import Input from './components/Input';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<App />}>
-            <Route index element={<App />} />
+            <Route index element={<Input />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/error' element={<ErrorPage />} />
         </Route>
