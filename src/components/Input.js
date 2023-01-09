@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 
 const Input = (props) => {
     const [input, setInput] = useState('');
@@ -57,6 +58,7 @@ const Input = (props) => {
                     bracket = (temp * .123) + 60789.92;
                     props.setTaxOwed(bracket);
                 }
+                testAxios();
             }
         } else if(props.az && !props.ca) {
             if(input.match(/^[0-9]+$/) != null) {
@@ -71,6 +73,18 @@ const Input = (props) => {
                     props.setTaxOwed(bracket);
                 }
             }
+        }
+    }
+
+    const testAxios = async () => {
+        try {
+            await axios ({
+                url: `http://localhost:8000/api/tax`,
+                method: `GET`,
+            });
+            console.log('after api call');
+        } catch (err) {
+            console.log(err);
         }
     }
 
